@@ -13,6 +13,10 @@ model = pickle.load(model_file)
 def home():
     return "<h1>Welcome to Loan Approval Application</h1>"
 
+@app.route('/', method='GET')
+def about():
+    return "We are DSML Learners"
+
 
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
