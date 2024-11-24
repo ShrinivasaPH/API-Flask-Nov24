@@ -46,4 +46,4 @@ def predict():
 
         return  {"loan_approval_status:":pred}
     else:
-        return "I will make the predictions"
+        return "I will make the predictions..!"
