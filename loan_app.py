@@ -15,7 +15,7 @@ def home():
 
 @app.route('/', methods='GET')
 def aboutus():
-    return "We are DSML Learners"
+    return "<h1>We are DSML Learners</h1>"
 
 
 @app.route('/predict', methods=['GET', 'POST'])
