@@ -14,7 +14,7 @@ def home():
     return "<h1>Welcome to Loan Approval Application</h1>"
 
 @app.route('/', methods='GET')
-def about():
+def aboutus():
     return "We are DSML Learners"
 
 
