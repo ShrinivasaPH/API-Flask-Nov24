@@ -6,23 +6,15 @@ app = Flask(__name__)
 model_file = open("classifier.pkl", "rb")
 model = pickle.load(model_file)
 
-
 # model.predict(inputs)
-
 @app.route('/', methods=['GET'])
 def home():
     return "<h1>Welcome to Loan Approval Application</h1>"
-
-#@app.route('/aboutus', methods='GET')
-#def aboutus():
-#    return "<h1>We are DSML Learners</h1>"
-
 
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
     if request.method == 'POST':
         # use model and predict
-        
         loan_req = request.get_json()
         
         if loan_req['Gender'] == "Male":
@@ -40,7 +32,6 @@ def predict():
         Credit_History= loan_req['Credit_History']
 
         # Pre-processing will happen here.
-
         result = model.predict([[Gender, Married, ApplicantIncome, LoanAmount, Credit_History]])
 
         if result == 0:
